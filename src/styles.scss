@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+$myFlix-Angular-client-primary: mat.define-palette(mat.$indigo-palette);
+$myFlix-Angular-client-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$myFlix-Angular-client-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object
+$myFlix-Angular-client-theme: mat.define-light-theme((
+  color: (
+    primary: $myFlix-Angular-client-primary,
+    accent: $myFlix-Angular-client-accent,
+    warn: $myFlix-Angular-client-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include the common styles and component themes
+@include mat.core();
+@include mat.all-component-themes($myFlix-Angular-client-theme);
+
+// Global styles and other CSS rules
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
