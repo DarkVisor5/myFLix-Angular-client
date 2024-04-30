@@ -9,10 +9,10 @@
         <mat-label>Username</mat-label>
         <input
           matInput
-          [(ngModel)]="userData.Username"
+          [(ngModel)]="userData.username"
           placeholder="Username"
           type="text"
-          name="Username"
+          name="username"
           required
           #Username="ngModel">
           <!-- Error handling -->
@@ -23,7 +23,7 @@
         <mat-label>Password</mat-label>
         <input
           matInput
-          [(ngModel)]="userData.Password"
+          [(ngModel)]="userData.password"
           type="password"
           placeholder="Password"
           name="Password"
@@ -37,7 +37,7 @@
         <mat-label>Email</mat-label>
         <input
           matInput
-          [(ngModel)]="userData.Email"
+          [(ngModel)]="userData.email"
           type="email"
           placeholder="Email"
           name="Email"
@@ -51,11 +51,13 @@
         <mat-label>Birthday</mat-label>
         <input
           matInput
-          [(ngModel)]="userData.Birthday"
-          type="date"
+          [matDatepicker]="picker"
+          [(ngModel)]="userData.birthday"
           placeholder="Birthday"
           name="Birthday"
           #Birthday="ngModel">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
       <!-- Submit button, disabled if form is invalid -->

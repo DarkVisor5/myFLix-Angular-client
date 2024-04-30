@@ -1,0 +1,36 @@
+<div class="profile-container">
+  <mat-card class="account-info">
+    <mat-card-title>Account Information</mat-card-title>
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="user.username">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Birthday</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="user.birthday" (dateChange)="updateProfile()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="user.email" (change)="updateProfile()">
+    </mat-form-field>
+
+    <button class="update" mat-raised-button color="primary" (click)="updateProfile()">Update Profile</button>
+    <button class="delete" mat-raised-button color="warn" (click)="deleteProfile()">Delete Account</button>
+  </mat-card>
+
+  <mat-card class="favorite-movies">
+    <mat-card-title>Your Favorite Movies</mat-card-title>
+    <div *ngFor="let movie of favoriteMovies" class="movie-item">
+      <img [src]="movie.image_url" alt="{{movie.title}}">
+      <h3>{{ movie.title }}</h3>
+    </div>
+    <p *ngIf="favoriteMovies.length === 0">No favorite movies added.</p>
+  </mat-card>
+</div>
+
+
+

@@ -1,0 +1,88 @@
+$gray-border: #e1e1e1;
+$space-md: 20px;
+$space-sm: 10px;
+$primary-color: blue; // Example primary color, adjust as needed
+
+@mixin button-hover($color) {
+  &:hover {
+    background-color: darken($color, 10%);
+    transform: translateY(-2px);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px lighten($color, 40%);
+  }
+}
+
+.profile-container {
+  max-width: 960px;
+  margin: auto;
+  padding: $space-md;
+  display: flex;
+  flex-direction: column;
+
+  .account-info,
+  .favorite-movies {
+    border: 1px solid $gray-border;
+    border-radius: 4px;
+    padding: $space-md;
+    margin-bottom: $space-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+button,.update {
+  width: 100%;
+  margin-top: $space-sm;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  @include button-hover($primary-color);
+}
+button,.delete {
+  width: 100%;
+  margin-top: $space-sm;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  @include button-hover(red);
+}
+
+.favorite-movies {
+  display: flex;
+  flex-wrap: nowrap; // Keeps all items in one line
+  overflow-x: auto; // Allows horizontal scrolling
+  padding: $space-sm;
+  align-items: center; // Centers items vertically
+
+  .movie-item {
+    flex: 0 0 auto;
+    width: 160px;
+    margin: $space-sm;
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    h3 {
+      font-size: 0.9em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

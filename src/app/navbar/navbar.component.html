@@ -1,0 +1,10 @@
+<nav *ngIf="isVisible" class="navbar">
+  <div class="navbar-brand">myFlix</div>
+  <div class="navbar-nav">
+    <span *ngIf="username">Logged in as: {{ username }}</span>
+    <a routerLink="/movies" routerLinkActive="active">Home</a>
+    <a routerLink="/profile" routerLinkActive="active">Profile</a>
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>
+

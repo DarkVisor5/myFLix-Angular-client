@@ -1,0 +1,25 @@
+/* src/app/navbar/navbar.component.scss */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #333;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.navbar-nav a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.active {
+  text-decoration: underline;
+}

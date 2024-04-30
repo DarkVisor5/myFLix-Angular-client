@@ -1,0 +1,10 @@
+{
+  "entryPoints": ["src/app"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "exclude": ["**/*.spec.ts"],
+  "name": "My Angular App Documentation",
+  "theme": "default",
+  "tsconfig": "tsconfig.json" // Make sure TypeDoc uses the same tsconfig
+}
+

@@ -1,0 +1,10 @@
+
+<h1 mat-dialog-title>{{ data.name }}</h1>
+<div mat-dialog-content>
+  <p>{{ data.bio }}</p>
+  <p *ngIf="data.birth">Born: {{ data.birth | date:'longDate' }}</p> <!-- Conditionally displayed -->
+  <p *ngIf="data.death">Died: {{ data.death | date:'longDate' }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

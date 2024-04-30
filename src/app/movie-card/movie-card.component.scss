@@ -1,0 +1,11 @@
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie-card {
+  max-width: 300px;  // Adjust as necessary for your design
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); // Optional: adds a shadow effect for depth
+}

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { UserRegistrationFormComponent } from './user-registration-form.component';
 
@@ -8,10 +9,13 @@ describe('UserRegistrationFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UserRegistrationFormComponent]
+      declarations: [ UserRegistrationFormComponent ],
+      providers: [
+        { provide: MatDialogRef, useValue: {close: () => {}} }
+      ]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(UserRegistrationFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
